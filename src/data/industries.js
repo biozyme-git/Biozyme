@@ -1,0 +1,58 @@
+export const industries = [
+  {
+    id: 'aquaculture',
+    title: 'Aquaculture & Shrimp Farming',
+    shortTitle: 'Aquaculture',
+    description: 'Primary organic carbon source for Biofloc technology and pond ammonia control across coastal aquaculture belts.',
+    icon: 'fish',
+  },
+  {
+    id: 'cattle-feed',
+    title: 'Cattle & Animal Feed Mills',
+    shortTitle: 'Cattle & Poultry Feed',
+    description: 'Palatability enhancer, dust suppressant, and high-energy carbohydrate binder for cattle feed pellets and mineral blocks.',
+    icon: 'beef',
+  },
+  {
+    id: 'distillery',
+    title: 'Distilleries & Bio-Ethanol',
+    shortTitle: 'Distilleries',
+    description: 'High-TRS molasses engineered for superior alcohol fermentation yield and bio-ethanol production.',
+    icon: 'flask',
+  },
+  {
+    id: 'foundry',
+    title: 'Foundries & Metal Casting',
+    shortTitle: 'Foundry & Metal Casting',
+    description: 'Cost-effective sand-mould and core binder providing high-temperature stability and strong tensile strength.',
+    icon: 'factory',
+  },
+  {
+    id: 'yeast',
+    title: 'Yeast & Fermentation',
+    shortTitle: 'Yeast & Fermentation',
+    description: 'Low-ash, stable-pH molasses acting as the primary carbon substrate for baker\'s and industrial yeast propagation.',
+    icon: 'microscope',
+  },
+  {
+    id: 'agriculture',
+    title: 'Agriculture & Organic Farming',
+    shortTitle: 'Agriculture',
+    description: 'Soil conditioner, composting accelerator, and microbial booster for organic fertilizers.',
+    icon: 'leaf',
+  },
+  {
+    id: 'pharma',
+    title: 'Pharma & Food Processing',
+    shortTitle: 'Pharma & Food',
+    description: 'Fermentation substrate for organic acids, vitamins, and specialized industrial applications.',
+    icon: 'pill',
+  },
+  {
+    id: 'tobacco',
+    title: 'Tobacco Processing',
+    shortTitle: 'Tobacco',
+    description: 'High-viscosity natural binder, humectant, and curing agent.',
+    icon: 'cigarette',
+  },
+];
