@@ -20,6 +20,7 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  const [showErrors, setShowErrors] = useState(false);
   const [formData, setFormData] = useState({
     company: '', name: '', industry: '', volume: '',
     packaging: '', frequency: '', location: '',
@@ -30,6 +31,10 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.company.trim() || !formData.name.trim() || !formData.phone.trim()) {
+      setShowErrors(true);
+      return;
+    }
     openWhatsAppRFQ(formData);
   };
 
@@ -83,8 +88,14 @@ export default function Contact() {
                 <CardContent className="pt-6">
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-2 gap-4">
-                      <Input type="text" placeholder="Company Name *" required value={formData.company} onChange={(e) => update('company', e.target.value)} />
-                      <Input type="text" placeholder="Contact Person *" required value={formData.name} onChange={(e) => update('name', e.target.value)} />
+                      <div>
+                        <Input type="text" placeholder="Company Name *" value={formData.company} onChange={(e) => update('company', e.target.value)} className={showErrors && !formData.company.trim() ? 'border-red-500' : ''} />
+                        {showErrors && !formData.company.trim() && <p className="text-red-500 text-xs mt-1">Required</p>}
+                      </div>
+                      <div>
+                        <Input type="text" placeholder="Contact Person *" value={formData.name} onChange={(e) => update('name', e.target.value)} className={showErrors && !formData.name.trim() ? 'border-red-500' : ''} />
+                        {showErrors && !formData.name.trim() && <p className="text-red-500 text-xs mt-1">Required</p>}
+                      </div>
                     </div>
                     <select value={formData.industry} onChange={(e) => update('industry', e.target.value)}
                       className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 outline-none">
@@ -101,7 +112,10 @@ export default function Contact() {
                       </select>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
-                      <Input type="tel" placeholder="Phone / WhatsApp *" required value={formData.phone} onChange={(e) => update('phone', e.target.value)} />
+                      <div>
+                        <Input type="tel" placeholder="Phone / WhatsApp *" value={formData.phone} onChange={(e) => update('phone', e.target.value)} className={showErrors && !formData.phone.trim() ? 'border-red-500' : ''} />
+                        {showErrors && !formData.phone.trim() && <p className="text-red-500 text-xs mt-1">Required</p>}
+                      </div>
                       <Input type="email" placeholder="Business Email" value={formData.email} onChange={(e) => update('email', e.target.value)} />
                     </div>
                     <Input type="text" placeholder="Delivery PIN Code / Port" value={formData.location} onChange={(e) => update('location', e.target.value)} />

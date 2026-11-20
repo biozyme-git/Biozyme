@@ -28,7 +28,7 @@ export default function CTABanner() {
           <Button asChild className="rounded-full px-8 py-3 h-auto text-base font-semibold bg-white text-brand-amber hover:bg-white/90">
             <Link to="/contact">Request Quote Now</Link>
           </Button>
-          <Button asChild variant="outline" className="rounded-full px-8 py-3 h-auto text-base font-semibold border-white text-white hover:bg-white/10">
+          <Button asChild variant="outline" className="rounded-full px-8 py-3 h-auto text-base font-semibold border-2 border-white text-white bg-white/15 hover:bg-white/25">
             <a href="tel:+919421105300">
               <HugeiconsIcon icon={TelephoneIcon} size={16} className="mr-2" /> Call +91-9421105300
             </a>

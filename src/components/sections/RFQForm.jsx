@@ -12,6 +12,7 @@ const steps = ['Profile', 'Sourcing Details', 'Contact & Specs'];
 
 export default function RFQForm() {
   const [step, setStep] = useState(0);
+  const [showErrors, setShowErrors] = useState(false);
   const [formData, setFormData] = useState({
     company: '', name: '', industry: '',
     volume: '', packaging: '', frequency: '', location: '',
@@ -20,8 +21,27 @@ export default function RFQForm() {
 
   const update = (field, value) => setFormData((prev) => ({ ...prev, [field]: value }));
 
+  const validateStep = () => {
+    if (step === 0 && (!formData.company.trim() || !formData.name.trim())) return false;
+    if (step === 2 && !formData.phone.trim()) return false;
+    return true;
+  };
+
+  const handleNext = () => {
+    if (!validateStep()) {
+      setShowErrors(true);
+      return;
+    }
+    setShowErrors(false);
+    setStep(step + 1);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!formData.phone.trim()) {
+      setShowErrors(true);
+      return;
+    }
     openWhatsAppRFQ(formData);
   };
 
@@ -59,8 +79,14 @@ export default function RFQForm() {
               <AnimatePresence mode="wait">
                 {step === 0 && (
                   <motion.div key="step0" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} className="space-y-5">
-                    <Input type="text" placeholder="Company Name *" required value={formData.company} onChange={(e) => update('company', e.target.value)} />
-                    <Input type="text" placeholder="Contact Person / Plant Manager Name *" required value={formData.name} onChange={(e) => update('name', e.target.value)} />
+                    <div>
+                      <Input type="text" placeholder="Company Name *" value={formData.company} onChange={(e) => update('company', e.target.value)} className={showErrors && !formData.company.trim() ? 'border-red-500' : ''} />
+                      {showErrors && !formData.company.trim() && <p className="text-red-500 text-xs mt-1">Company name is required</p>}
+                    </div>
+                    <div>
+                      <Input type="text" placeholder="Contact Person / Plant Manager Name *" value={formData.name} onChange={(e) => update('name', e.target.value)} className={showErrors && !formData.name.trim() ? 'border-red-500' : ''} />
+                      {showErrors && !formData.name.trim() && <p className="text-red-500 text-xs mt-1">Contact person name is required</p>}
+                    </div>
                     <select value={formData.industry} onChange={(e) => update('industry', e.target.value)}
                       className="flex h-9 w-full rounded-lg border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 outline-none">
                       <option value="">Industry Segment</option>
@@ -88,7 +114,10 @@ export default function RFQForm() {
                 )}
                 {step === 2 && (
                   <motion.div key="step2" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} className="space-y-5">
-                    <Input type="tel" placeholder="Phone / WhatsApp Number *" required value={formData.phone} onChange={(e) => update('phone', e.target.value)} />
+                    <div>
+                      <Input type="tel" placeholder="Phone / WhatsApp Number *" value={formData.phone} onChange={(e) => update('phone', e.target.value)} className={showErrors && !formData.phone.trim() ? 'border-red-500' : ''} />
+                      {showErrors && !formData.phone.trim() && <p className="text-red-500 text-xs mt-1">Phone number is required</p>}
+                    </div>
                     <Input type="email" placeholder="Business Email" value={formData.email} onChange={(e) => update('email', e.target.value)} />
                     <Textarea placeholder="Additional requirements (coupler size, pump availability, etc.)" rows="3" value={formData.message} onChange={(e) => update('message', e.target.value)} />
                   </motion.div>
@@ -101,7 +130,7 @@ export default function RFQForm() {
                 )}
                 <div className="ml-auto">
                   {step < 2 ? (
-                    <Button type="button" onClick={() => setStep(step + 1)}>Next Step</Button>
+                    <Button type="button" onClick={handleNext}>Next Step</Button>
                   ) : (
                     <Button type="submit" className="bg-brand-whatsapp hover:bg-brand-whatsapp/90 text-white">
                       <HugeiconsIcon icon={SentIcon} size={16} className="mr-2" /> Send via WhatsApp
