@@ -30,7 +30,7 @@ export default function IndustriesPreview() {
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4 }}
             >
-              <Card className="bg-gradient-to-br from-primary to-brand-green-light border-0 cursor-pointer hover:shadow-xl transition-shadow h-full">
+              <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light border-0 cursor-pointer shadow-lg hover:shadow-xl transition-shadow h-full">
                 <CardContent className="flex flex-col items-center justify-center text-center py-6 sm:py-8 min-h-[130px]">
                   <HugeiconsIcon icon={item.icon} size={40} className="text-white/90 mb-3" />
                   <h3 className="font-heading font-semibold text-white text-xs sm:text-sm leading-tight whitespace-pre-line">

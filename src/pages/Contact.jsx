@@ -14,7 +14,7 @@ import { openWhatsAppRFQ } from '../utils/whatsapp';
 const contactInfo = [
   { icon: Location01Icon, title: 'Registered Office', lines: ['Grenadiers Building, Post Office Chowk,', 'Kolhapur – 416006, Maharashtra, India'] },
   { icon: TelephoneIcon, title: 'Phone / Sales Desk', lines: ['+91-7507504141 (CEO)', '+91-9158177171 (Logistics)', '+91-9421105300 (Marketing)', '+91-9049596566 (Office)'] },
-  { icon: Mail01Icon, title: 'Email', lines: ['sales@biozymemolasses.com', 'biozymesales@gmail.com'] },
+  { icon: Mail01Icon, title: 'Email', lines: ['sales@biozyme.co.in', 'biozymesales@gmail.com'] },
   { icon: Clock01Icon, title: 'Business Hours', lines: ['Monday – Saturday, 9:00 AM – 7:00 PM IST'] },
   { icon: ShieldCheckIcon, title: 'Compliance', lines: ['M-III License Holder (State Excise Dept., Govt. of Maharashtra)', '100% GST Compliant'] },
 ];
@@ -40,7 +40,7 @@ export default function Contact() {
 
   return (
     <PageTransition>
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-green-dark via-primary to-brand-green-light">
+      <section className="relative pt-32 pb-20 bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p className="text-brand-amber-light text-sm font-semibold uppercase tracking-widest mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Get In Touch</motion.p>
           <motion.h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
@@ -54,38 +54,39 @@ export default function Contact() {
 
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="text-3xl font-heading font-bold text-primary mb-8 text-center lg:text-left">Office Details</h2>
-              <div className="space-y-6">
-                {contactInfo.map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <HugeiconsIcon icon={item.icon} size={20} className="text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{item.title}</h3>
-                      <div className="text-muted-foreground text-sm mt-1 space-y-0.5">
-                        {item.lines.map((line) => <p key={line}>{line}</p>)}
+          <div className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-start">
+              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                <h2 className="text-3xl font-heading font-bold text-white mb-8 text-center lg:text-left">Office Details</h2>
+                <div className="space-y-6">
+                  {contactInfo.map((item) => (
+                    <div key={item.title} className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0 text-white">
+                        <HugeiconsIcon icon={item.icon} size={20} className="text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white">{item.title}</h3>
+                        <div className="text-white/80 text-sm mt-1 space-y-0.5">
+                          {item.lines.map((line) => <p key={line}>{line}</p>)}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
 
-              <div className="mt-8 rounded-xl overflow-hidden border border-border h-64">
-                <iframe
-                  title="Biozyme Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.2!2d74.24!3d16.70!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKolhapur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
-                  width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-            </motion.div>
+                <div className="mt-8 rounded-xl overflow-hidden border border-white/20 shadow-lg h-64">
+                  <iframe
+                    title="Biozyme Office Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.2!2d74.24!3d16.70!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sKolhapur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1234567890"
+                    width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+              </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <h2 className="text-3xl font-heading font-bold text-primary mb-8 text-center lg:text-left">Request a Quote</h2>
-              <Card>
-                <CardContent className="pt-6">
+              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
+                <h2 className="text-3xl font-heading font-bold text-white mb-8 text-center lg:text-left">Request a Quote</h2>
+                <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-0">
+                  <CardContent className="pt-6">
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-2 gap-4">
                       <div>
@@ -132,7 +133,8 @@ export default function Contact() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <section className="py-20 bg-brand-bg-alt">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

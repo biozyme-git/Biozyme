@@ -15,7 +15,7 @@ const packaging = [
 export default function Logistics() {
   return (
     <PageTransition>
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-green-dark via-primary to-brand-green-light">
+      <section className="relative pt-32 pb-20 bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p className="text-brand-amber-light text-sm font-semibold uppercase tracking-widest mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Supply Chain</motion.p>
           <motion.h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>

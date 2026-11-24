@@ -9,7 +9,7 @@ const stats = [
 
 export default function StatsBar() {
   return (
-    <section className="py-16 bg-gradient-to-r from-brand-green-dark via-primary to-brand-green-dark">
+    <section className="py-16 bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat) => (

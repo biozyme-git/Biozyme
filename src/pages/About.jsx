@@ -16,7 +16,7 @@ const pillars = [
 export default function About() {
   return (
     <PageTransition>
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-green-dark via-primary to-brand-green-light overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 right-20 w-96 h-96 bg-brand-amber rounded-full blur-3xl" />
         </div>
@@ -44,7 +44,7 @@ export default function About() {
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-0 text-center">
+              <Card className="bg-gradient-to-t from-primary/5 to-primary/10 border-0 text-center shadow-md">
                 <CardContent className="pt-8 pb-8">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <HugeiconsIcon icon={Building02Icon} size={32} className="text-primary" />

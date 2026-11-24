@@ -16,7 +16,7 @@ const qualityPillars = [
 export default function Quality() {
   return (
     <PageTransition>
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-brand-green-dark via-primary to-brand-green-light">
+      <section className="relative pt-32 pb-20 bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p className="text-brand-amber-light text-sm font-semibold uppercase tracking-widest mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>Compliance & Trust</motion.p>
           <motion.h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
@@ -31,7 +31,7 @@ export default function Quality() {
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-brand-amber to-brand-green-light hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-t from-primary via-brand-amber to-brand-green-light hidden md:block" />
             <div className="space-y-8">
               {qualityPillars.map((pillar, i) => (
                 <motion.div key={pillar.title} className="relative flex items-start gap-6"

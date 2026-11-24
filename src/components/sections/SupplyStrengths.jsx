@@ -31,13 +31,13 @@ export default function SupplyStrengths() {
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4 }}
             >
-              <Card className="h-full hover:shadow-lg transition-shadow">
+              <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 h-full shadow-lg hover:shadow-xl transition-shadow">
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                    <HugeiconsIcon icon={s.icon} size={24} className="text-primary" />
+                  <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center mb-4">
+                    <HugeiconsIcon icon={s.icon} size={24} className="text-white" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-heading font-semibold text-primary mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
+                  <h3 className="text-base sm:text-lg font-heading font-semibold text-white mb-2">{s.title}</h3>
+                  <p className="text-white/80 text-sm leading-relaxed">{s.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
