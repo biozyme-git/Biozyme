@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-export default function StatsCounter({ value, suffix = '', prefix = '', label, duration = 2 }) {
+export default function StatsCounter({ value, suffix = '', prefix = '', label, duration = 1.2, format = true }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [count, setCount] = useState(0);
@@ -27,6 +27,10 @@ export default function StatsCounter({ value, suffix = '', prefix = '', label, d
     return () => clearInterval(timer);
   }, [isInView, value, duration]);
 
+  const displayCount = typeof count === 'number'
+    ? (format ? count.toLocaleString() : count.toString())
+    : count;
+
   return (
     <motion.div
       ref={ref}
@@ -37,7 +41,7 @@ export default function StatsCounter({ value, suffix = '', prefix = '', label, d
       transition={{ duration: 0.5 }}
     >
       <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">
-        {prefix}{typeof count === 'number' ? count.toLocaleString() : count}{suffix}
+        {prefix}{displayCount}{suffix}
       </div>
       <p className="text-white/70 text-sm font-medium">{label}</p>
     </motion.div>

@@ -1,7 +1,7 @@
 import StatsCounter from '../ui/StatsCounter';
 
 const stats = [
-  { value: '2010', prefix: 'Est. ', suffix: '', label: 'Over a Decade of Commodity Trading' },
+  { value: '2010', prefix: 'Est. ', suffix: '', label: 'Over a Decade of Commodity Trading', format: false },
   { value: '28', suffix: '+', label: 'States Served Across India' },
   { value: '10000', suffix: '+', label: 'MT Annual Supply Capacity' },
   { value: '100', suffix: '%', label: 'GST & Excise Compliant' },
