@@ -116,23 +116,20 @@ export default function Hero() {
       <div className="relative z-10 bg-brand-green-dark/95">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <motion.div
-            className="flex flex-wrap justify-center items-center gap-4 sm:gap-8"
+            className="flex flex-col sm:flex-row justify-center items-center gap-2.5 sm:gap-8 text-xs text-center"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            {[
-              { label: 'Serving Industries.', sub: 'Nourishing Growth.' },
-              { label: 'Animal Feed' },
-              { label: 'Distilleries' },
-              { label: 'Bio-Fertilizers' },
-              { label: 'Food & More' },
-            ].map((item) => (
-              <div key={item.label} className="text-white/90 text-center">
-                <p className="text-xs font-medium leading-tight">{item.label}</p>
-                {item.sub && <p className="text-[10px] text-white/60">{item.sub}</p>}
-              </div>
-            ))}
+            <div className="flex justify-center items-center gap-3.5 sm:gap-8">
+              <span className="font-semibold text-white whitespace-nowrap">Serving Industries.</span>
+              <span className="font-medium text-white/90 whitespace-nowrap">Animal Feed</span>
+              <span className="font-medium text-white/90 whitespace-nowrap">Distilleries</span>
+            </div>
+            <div className="flex justify-center items-center gap-4 sm:gap-8">
+              <span className="font-medium text-white/90 whitespace-nowrap">Bio-Fertilizers</span>
+              <span className="font-medium text-white/90 whitespace-nowrap">Food & More</span>
+            </div>
           </motion.div>
         </div>
       </div>
