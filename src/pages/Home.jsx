@@ -105,7 +105,7 @@ export default function Home() {
               transition={{ delay: 0.1 }}
             >
               <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="space-y-6 pt-6">
+                <CardContent className="p-6 sm:p-7 space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-white/15 border border-white/20 flex items-center justify-center flex-shrink-0">
                       <HugeiconsIcon icon={HandshakeIcon} size={20} className="text-white" />

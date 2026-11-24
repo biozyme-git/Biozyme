@@ -86,7 +86,7 @@ export default function Contact() {
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
                 <h2 className="text-3xl font-heading font-bold text-white mb-8 text-center lg:text-left">Request a Quote</h2>
                 <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-0">
-                  <CardContent className="pt-6">
+                  <CardContent className="p-6 sm:p-8">
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid grid-cols-2 gap-4">
                       <div>

@@ -32,7 +32,7 @@ export default function SupplyStrengths() {
               whileHover={{ y: -4 }}
             >
               <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 h-full shadow-lg hover:shadow-xl transition-shadow">
-                <CardContent className="pt-6">
+                <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center">
                   <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center mb-4">
                     <HugeiconsIcon icon={s.icon} size={24} className="text-white" />
                   </div>

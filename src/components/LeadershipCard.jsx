@@ -15,7 +15,7 @@ export default function LeadershipCard({ member, index }) {
       whileHover={{ y: -6 }}
     >
       <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 shadow-lg hover:shadow-xl transition-shadow text-center h-full">
-        <CardContent className="pt-6">
+        <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center items-center">
           <div className="w-20 h-20 rounded-full bg-white/15 border border-white/20 flex items-center justify-center text-white text-2xl font-heading font-bold mb-4 mx-auto shadow-inner">
             {member.name.split(' ').map(n => n[0]).join('')}
           </div>

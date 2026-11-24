@@ -31,7 +31,7 @@ export default function IndustriesPreview() {
               whileHover={{ y: -4 }}
             >
               <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light border-0 cursor-pointer shadow-lg hover:shadow-xl transition-shadow h-full">
-                <CardContent className="flex flex-col items-center justify-center text-center py-6 sm:py-8 min-h-[130px]">
+                <CardContent className="p-5 sm:p-6 h-full flex flex-col items-center justify-center text-center min-h-[130px]">
                   <HugeiconsIcon icon={item.icon} size={40} className="text-white/90 mb-3" />
                   <h3 className="font-heading font-semibold text-white text-xs sm:text-sm leading-tight whitespace-pre-line">
                     {item.title}

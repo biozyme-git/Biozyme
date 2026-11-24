@@ -90,8 +90,8 @@ export default function Products() {
                   A specialized carbon-rich aquaculture supplement formulated specifically for shrimp and Biofloc farming hubs. Combining high-Brix sugarcane molasses with organic acids, beneficial probiotics, and mineral stabilizers, it helps maintain optimal Carbon-to-Nitrogen (C:N) ratios, controls toxic pond ammonia, and promotes healthy microbial floc growth.
                 </p>
                 <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                  <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 shadow-lg hover:shadow-xl transition-shadow">
-                    <CardContent className="pt-6">
+                  <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 shadow-lg hover:shadow-xl transition-shadow h-full">
+                    <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center">
                       <h4 className="font-heading font-semibold text-white mb-3">Key Applications</h4>
                       <ul className="space-y-2 text-white/80 text-sm text-left">
                         <li className="flex items-start gap-2"><span className="text-brand-amber-light mt-0.5">●</span>Vannamei shrimp ponds</li>
@@ -100,8 +100,8 @@ export default function Products() {
                       </ul>
                     </CardContent>
                   </Card>
-                  <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 shadow-lg hover:shadow-xl transition-shadow">
-                    <CardContent className="pt-6">
+                  <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 shadow-lg hover:shadow-xl transition-shadow h-full">
+                    <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center">
                       <h4 className="font-heading font-semibold text-white mb-3">Packaging Options</h4>
                       <ul className="space-y-2 text-white/80 text-sm text-left">
                         <li className="flex items-start gap-2"><span className="text-brand-amber-light mt-0.5">●</span>50 kg HDPE drums</li>
@@ -128,7 +128,7 @@ export default function Products() {
             {storageGuidance.map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 h-full shadow-lg hover:shadow-xl transition-shadow text-center">
-                  <CardContent className="pt-6">
+                  <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center text-center">
                     <h3 className="text-lg font-heading font-semibold text-white mb-2">{item.title}</h3>
                     <p className="text-white/80 text-sm leading-relaxed">{item.description}</p>
                   </CardContent>

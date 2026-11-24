@@ -40,7 +40,7 @@ export default function Quality() {
                     <HugeiconsIcon icon={pillar.icon} size={28} className="text-primary" />
                   </div>
                   <Card className="flex-1 hover:shadow-lg transition-shadow">
-                    <CardContent className="pt-5">
+                    <CardContent className="p-5 sm:p-6 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-2 md:hidden">
                         <HugeiconsIcon icon={pillar.icon} size={20} className="text-primary" />
                       </div>
@@ -69,7 +69,7 @@ export default function Quality() {
             ].map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="h-full text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-6">
+                  <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center items-center">
                     <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mx-auto mb-3`}>
                       <HugeiconsIcon icon={item.icon} size={24} />
                     </div>

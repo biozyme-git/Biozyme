@@ -36,7 +36,7 @@ export default function Logistics() {
             ].map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-6">
+                  <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                       <HugeiconsIcon icon={item.icon} size={24} className="text-primary" />
                     </div>
@@ -88,7 +88,7 @@ export default function Logistics() {
             <p className="text-muted-foreground text-sm max-w-xl mx-auto">Every tanker undergoes a Dual-Weighment Audit to guarantee 100% net weight accuracy.</p>
           </div>
           <Card className="max-w-3xl mx-auto">
-            <CardContent className="pt-8 pb-8">
+            <CardContent className="p-6 sm:p-8">
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 {[
                   { icon: JusticeScale01Icon, title: 'Mill Weighbridge', desc: 'First weighment at the sugar mill', color: 'bg-primary/10 text-primary' },

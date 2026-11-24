@@ -34,7 +34,7 @@ export default function Industries() {
               return (
                 <motion.div key={industry.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} whileHover={{ y: -4 }}>
                   <Card className="h-full hover:shadow-lg transition-shadow text-center">
-                    <CardContent className="pt-6">
+                    <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center items-center text-center">
                       <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                         {icon && <HugeiconsIcon icon={icon} size={28} className="text-primary" />}
                       </div>

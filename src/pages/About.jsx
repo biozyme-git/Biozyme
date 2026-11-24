@@ -45,7 +45,7 @@ export default function About() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
               <Card className="bg-gradient-to-t from-primary/5 to-primary/10 border-0 text-center shadow-md">
-                <CardContent className="pt-8 pb-8">
+                <CardContent className="p-6 sm:p-8">
                   <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                     <HugeiconsIcon icon={Building02Icon} size={32} className="text-primary" />
                   </div>
@@ -79,7 +79,7 @@ export default function About() {
             {pillars.map((pillar, i) => (
               <motion.div key={pillar.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
                 <Card className="h-full hover:shadow-lg transition-shadow text-center">
-                  <CardContent className="pt-6">
+                  <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center items-center">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <HugeiconsIcon icon={pillar.icon} size={24} className="text-primary" />
                     </div>
