@@ -1,4 +1,3 @@
-import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { HugeiconsIcon } from '@hugeicons/react';
@@ -22,114 +21,24 @@ const features = [
 ];
 
 function HeroVideo() {
-  const videoRef = useRef(null);
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const canvas = canvasRef.current;
-    if (!video || !canvas) return;
-
-    let animId;
-    let isMounted = true;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-
-    const render = () => {
-      if (!isMounted) return;
-      if (video.readyState >= 2) {
-        const w = 480;
-        const h = Math.round((video.videoHeight / (video.videoWidth || 1)) * 480) || 420;
-        if (canvas.width !== w || canvas.height !== h) {
-          canvas.width = w;
-          canvas.height = h;
-        }
-
-        ctx.drawImage(video, 0, 0, w, h);
-        const imgData = ctx.getImageData(0, 0, w, h);
-        const buf = imgData.data;
-
-        // 1. Scan from left and right for each row to clear outer black background
-        for (let y = 0; y < h; y++) {
-          const rowStart = y * w * 4;
-          for (let x = 0; x < w; x++) {
-            const idx = rowStart + x * 4;
-            if (Math.max(buf[idx], buf[idx + 1], buf[idx + 2]) <= 10) {
-              buf[idx + 3] = 0;
-            } else {
-              break; // Reached outer edge of bottle
-            }
-          }
-          for (let x = w - 1; x >= 0; x--) {
-            const idx = rowStart + x * 4;
-            if (Math.max(buf[idx], buf[idx + 1], buf[idx + 2]) <= 10) {
-              buf[idx + 3] = 0;
-            } else {
-              break; // Reached outer edge of bottle
-            }
-          }
-        }
-
-        // 2. Scan from top and bottom for each column to clear corner margins
-        for (let x = 0; x < w; x++) {
-          for (let y = 0; y < h; y++) {
-            const idx = (y * w + x) * 4;
-            if (Math.max(buf[idx], buf[idx + 1], buf[idx + 2]) <= 10) {
-              buf[idx + 3] = 0;
-            } else {
-              break; // Reached top of lid
-            }
-          }
-          for (let y = h - 1; y >= 0; y--) {
-            const idx = (y * w + x) * 4;
-            if (Math.max(buf[idx], buf[idx + 1], buf[idx + 2]) <= 10) {
-              buf[idx + 3] = 0;
-            } else {
-              break; // Reached base of bottle
-            }
-          }
-        }
-
-        ctx.putImageData(imgData, 0, 0);
-      }
-      animId = requestAnimationFrame(render);
-    };
-
-    video.play().catch(() => {});
-    animId = requestAnimationFrame(render);
-
-    return () => {
-      isMounted = false;
-      cancelAnimationFrame(animId);
-    };
-  }, []);
-
   return (
-    <>
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        crossOrigin="anonymous"
-        className="hidden"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-        <source src="/videos/hero.webm" type="video/webm" />
-        <source src="/videos/hero.mov" type="video/quicktime" />
-      </video>
-      <canvas
-        ref={canvasRef}
-        className="w-full h-auto max-w-[300px] sm:max-w-[400px] lg:max-w-[550px] pointer-events-none drop-shadow-2xl"
-      />
-    </>
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-auto max-w-[280px] sm:max-w-[360px] lg:max-w-[460px] pointer-events-none object-contain select-none"
+    >
+      <source src="/videos/hero_clean.mp4" type="video/mp4" />
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
   );
 }
 
 export default function Hero() {
   return (
     <section className="relative pt-16 overflow-hidden bg-primary">
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-green-dark to-brand-green-light" />
+      <div className="absolute inset-0 bg-primary" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[85vh] py-12">

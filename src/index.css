@@ -69,8 +69,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', sans-serif;
 
   --color-brand-green: #1B4332;
   --color-brand-green-light: #2D6A4F;
