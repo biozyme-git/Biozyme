@@ -68,7 +68,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 bg-brand-bg-alt">
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <p className="text-brand-amber text-xs font-semibold uppercase tracking-widest mb-2">Our Foundation</p>

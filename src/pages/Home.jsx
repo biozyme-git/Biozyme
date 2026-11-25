@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <IndustriesPreview />
 
-      <section className="py-16 sm:py-20 bg-brand-bg-alt">
+      <section className="py-16 sm:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 items-start">
             <motion.div
