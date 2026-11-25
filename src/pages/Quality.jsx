@@ -55,26 +55,27 @@ export default function Quality() {
         </div>
       </section>
 
-      <section className="py-20 bg-brand-bg-alt">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <p className="text-brand-amber text-xs font-semibold uppercase tracking-widest mb-2">For Developer Reference</p>
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-primary">Document Availability</h2>
+            <p className="text-brand-amber text-xs font-semibold uppercase tracking-widest mb-2">Verified Compliance</p>
+            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-primary mb-3">Document Availability</h2>
+            <p className="text-muted-foreground text-sm max-w-xl mx-auto">Standardized dossiers and test certifications available for contracted buyers and bulk procurement.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: Download03Icon, title: 'MSDS & TDS', desc: 'Provided as downloadable PDF via lead-capture form.', color: 'bg-green-100 text-green-600' },
-              { icon: LockKeyIcon, title: 'M-III Excise License', desc: 'Watermarked copy shared only with verified buyers upon RFQ.', color: 'bg-brand-amber/10 text-brand-amber' },
-              { icon: ClipboardListIcon, title: 'Certificate of Analysis', desc: 'Provided on request or included with every dispatch.', color: 'bg-secondary/10 text-secondary' },
+              { icon: Download03Icon, title: 'MSDS & TDS', desc: 'Provided as downloadable PDF via lead-capture form.' },
+              { icon: LockKeyIcon, title: 'M-III Excise License', desc: 'Watermarked copy shared only with verified buyers upon RFQ.' },
+              { icon: ClipboardListIcon, title: 'Certificate of Analysis', desc: 'Provided on request or included with every dispatch.' },
             ].map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Card className="h-full text-center hover:shadow-lg transition-shadow">
+                <Card className="bg-gradient-to-t from-brand-green-dark via-primary to-brand-green-light text-white border-0 h-full text-center shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="p-6 sm:p-7 h-full flex flex-col justify-center items-center">
-                    <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mx-auto mb-3`}>
-                      <HugeiconsIcon icon={item.icon} size={24} />
+                    <div className="w-12 h-12 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center mx-auto mb-3">
+                      <HugeiconsIcon icon={item.icon} size={24} className="text-white" />
                     </div>
-                    <h4 className="font-heading font-semibold text-primary">{item.title}</h4>
-                    <p className="text-muted-foreground text-sm mt-2">{item.desc}</p>
+                    <h4 className="font-heading font-semibold text-white">{item.title}</h4>
+                    <p className="text-white/80 text-sm mt-2">{item.desc}</p>
                   </CardContent>
                 </Card>
               </motion.div>
